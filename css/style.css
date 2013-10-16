@@ -62,11 +62,11 @@ a {
   height: 32px;
 }
 
-.twitter{background-position: 0 0;}
-.github{background-position: -32px 0;}
-.coderwall{background-position: -64px 0;}
-.email{background-position: -96px 0;}
-.linkedin{background-position: -128px 0;}
+.twitter{background-position: 0 -4px;}
+.github{background-position: -32px -2px;}
+.coderwall{background-position: -64px -2px;}
+.email{background-position: -96px -3px;}
+.linkedin{background-position: -128px -4px;}
 
 #coderwall_badges{
   display: inline-block;
