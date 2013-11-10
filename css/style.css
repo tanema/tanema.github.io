@@ -19,7 +19,7 @@ body {
   width: 450px;
   border: 1px solid #CCC;
   background: white;
-  margin: 70px auto;
+  margin: 70px auto 0px auto;
   -webkit-border-radius: 5px;
      -moz-border-radius: 5px;
           border-radius: 5px;
@@ -70,4 +70,18 @@ a {
 
 #coderwall_badges{
   display: inline-block;
+}
+
+#display-card {
+  text-align:center;
+  display: block;
+  width: 400px;
+  border: 1px solid #CCC;
+  background: white;
+  margin: 0px auto;
+  padding: 10px 0px;
+  font-size: 18px;
+  -webkit-border-radius: 0px 0px 5px 5px;
+     -moz-border-radius: 0px 0px 5px 5px;
+          border-radius: 0px 0px 5px 5px;
 }
