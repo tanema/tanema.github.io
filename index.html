@@ -74,22 +74,6 @@
            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      var xmlhttp,
-          subline = document.getElementById("subline");
-      if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-      } else {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-          var json = json.Parse(xmlhttp.responseText);
-          subline.innerHTML = json.description + "</br>" + subline.innerHTML
-        }
-      }
-      xmlhttp.open("GET","https://api.twitter.com/1/users/lookup.json?screen_name=timanema",true);
-      xmlhttp.send();
-
       ga('create', 'UA-45905440-1', 'timanema.com');
       ga('send', 'pageview');
     </script>
