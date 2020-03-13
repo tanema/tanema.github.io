@@ -20,7 +20,7 @@ export const generateWeapon = (heritage) => {
     availableTypes = ["light", "heavy"]
   }
   const type = randPick(availableTypes)
-  const mastered = pickMult(weapons[type], 1)
+  const mastered = pickMult(weapons[type], 1, [heritage.mastered])
   if(heritage.mastered) {
     mastered.push(heritage.mastered)
   }

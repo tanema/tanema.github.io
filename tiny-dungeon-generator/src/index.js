@@ -5,8 +5,10 @@ import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { Button, Tile, Table } from 'react-bulma-components';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-const App = ({}) => {
-  const [character, setCharacter] = useState(newCharacter());
+const character = newCharacter();
+
+const App = ({initial_character}) => {
+  const [character, setCharacter] = useState(initial_character);
   const [copied, setCopied] = useState(false);
 
   const {heritage, weapon, traits, attrs} = character;
@@ -60,12 +62,11 @@ const App = ({}) => {
         </Tile>
 
         <Tile kind="child" notification>
-          <p className="title">Heritage ({heritage.name})</p>
+          <p className="title">Heritage: {heritage.name}</p>
           <Table striped>
             <tbody>
               <tr><td><b>HP</b></td><td>{heritage.hp}</td></tr>
-              <tr><td><b>Heritage Trait</b></td><td>{heritage.trait}</td></tr>
-              <tr><td><b>Mastery</b></td><td>{heritage.mastered}</td></tr>
+              <tr><td><b>{heritage.trait.split(": ")[0]}</b></td><td>{heritage.trait.split(": ")[1]}</td></tr>
             </tbody>
           </Table>
         </Tile>
@@ -84,6 +85,6 @@ const App = ({}) => {
 }
 
 render(
-  <App />,
+  <App initial_character={character} />,
   document.getElementById('root')
 );
