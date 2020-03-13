@@ -16,7 +16,7 @@ const App = ({initial_character}) => {
   return (<div>
     <Tile>
       <Tile kind="parent" vertical>
-        <Tile className="is-primary" kind="child" notification>
+        <Tile kind="child" notification>
           <p className="title">
             Character Generator
           </p>
@@ -34,8 +34,6 @@ const App = ({initial_character}) => {
           <p className="subtitle">
             You are a {attrs.adjective} {heritage.name} from {attrs.homeland} that {attrs.backstory} and grew up learning to be a {attrs.trade}
           </p>
-        </Tile>
-        <Tile kind="child" notification>
           <p className="title">Traits</p>
           <Table striped>
             <tbody>
@@ -47,10 +45,6 @@ const App = ({initial_character}) => {
               })}
             </tbody>
           </Table>
-        </Tile>
-      </Tile>
-      <Tile kind="parent" vertical>
-        <Tile kind="child" notification>
           <p className="title">Character</p>
           <Table striped>
             <tbody>
@@ -59,9 +53,17 @@ const App = ({initial_character}) => {
               <tr><td><b>Trade</b></td><td>{attrs.trade}</td></tr>
             </tbody>
           </Table>
+          <p className="title">Weapons Mastery ({weapon.type})</p>
+          <ul className="list">
+            {weapon.mastered.map((weapon) => (<li key={weapon} className="list-item">
+              {weapon}
+            </li>))}
+          </ul>
         </Tile>
+      </Tile>
 
-        <Tile kind="child" notification>
+      <Tile kind="parent" vertical>
+        <Tile kind="child" className="is-primary" notification>
           <p className="title">Heritage: {heritage.name}</p>
           <Table striped>
             <tbody>
@@ -69,14 +71,12 @@ const App = ({initial_character}) => {
               <tr><td><b>{heritage.trait.split(": ")[0]}</b></td><td>{heritage.trait.split(": ")[1]}</td></tr>
             </tbody>
           </Table>
+          <p>{heritage.desc}</p>
         </Tile>
         <Tile kind="child" notification>
-          <p className="title">Weapons Mastery ({weapon.type})</p>
-          <ul className="list">
-            {weapon.mastered.map((weapon) => (<li key={weapon} className="list-item">
-              {weapon}
-            </li>))}
-          </ul>
+          <figure class="image is-square">
+            <img src={heritage.img} />
+          </figure>
         </Tile>
       </Tile>
     </Tile>
