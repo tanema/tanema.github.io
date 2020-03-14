@@ -31,6 +31,10 @@ const App = ({initial_character}) => {
               <Button>{copied ? "Copied" : "Copy Character"}</Button>
             </CopyToClipboard>
           </p>
+
+          <p className="title">
+            {character.name}
+          </p>
           <p className="subtitle">
             You are a {attrs.adjective} {heritage.name} from {attrs.homeland} that {attrs.backstory} and grew up learning to be a {attrs.trade}
           </p>

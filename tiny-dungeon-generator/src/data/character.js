@@ -1,12 +1,14 @@
 import { generateAttributes } from './attributes';
 import { generateHeritage } from './heritage';
 import { generateWeapon } from './weapons';
+import { generateName } from './names';
 import { traits } from './traits';
 import { pickMult } from '../lib/rand';
 
 export const newCharacter = () => {
   const heritage = generateHeritage();
   return {
+    name: generateName(),
     heritage: heritage,
     traits: pickMult(traits, 3),
     weapon: generateWeapon(heritage),
