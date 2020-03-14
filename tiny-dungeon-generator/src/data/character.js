@@ -19,6 +19,8 @@ export const newCharacter = () => {
 export const characterString = (character) => {
   const {heritage, weapon, traits, attrs} = character;
   return `
+${character.name}
+
 You are a ${attrs.adjective} ${heritage.name} from ${attrs.homeland} that ${attrs.backstory} and grew up learning to be a ${attrs.trade}
 
 Heritage: ${heritage.name}
