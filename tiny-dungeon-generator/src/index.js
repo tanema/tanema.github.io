@@ -21,6 +21,7 @@ const App = ({initial_character}) => {
             Character Generator
           </p>
           <p className="subtitle">
+
             <Button onClick={() => {
               setCharacter(newCharacter())
               setCopied(false)
@@ -66,6 +67,15 @@ const App = ({initial_character}) => {
       </Tile>
 
       <Tile kind="parent" vertical>
+
+        <Tile kind="child">
+          <p className="title">Resources</p>
+          <a class="button is-small" href="resources/rulebook.pdf" download>Full Rules</a>
+          <a class="button is-small" href="resources/character_sheet.pdf" download>Character Sheet</a>
+          <a class="button is-small" href="resources/heritages.pdf" download>Heritages</a>
+          <a class="button is-small" href="resources/traits.pdf" download>Traits</a>
+        </Tile>
+
         <Tile kind="child">
           <figure className="image">
             <img src={heritage.img} />
