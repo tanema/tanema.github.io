@@ -1,0 +1,2 @@
+#!/bin/sh
+curl -fsSL https://raw.githubusercontent.com/tanema/dotfiles/refs/heads/main/bin/install | sh -s -- "$@"
